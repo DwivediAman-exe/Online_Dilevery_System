@@ -5,7 +5,7 @@
 
 <div class="container mt-5">
 	<div class="row justify-content-center">
-		<div class="col-lg-5">
+		<div class="col-lg-6">
 			<div class="card hover-shadow p-4">
 				<div class="card-body">
 					<h3 class="text-center text-dark mb-3">
@@ -18,14 +18,11 @@
 						</h4>
 						<form method="POST">
 							{% csrf_token %}
-							{% bootstrap_form_errors form %}
-							<div class="mb-3">
-								{% bootstrap_label "Email" %}
-								{% bootstrap_field form.username show_label=False placeholder="Email" %}
-							</div>
-							{% bootstrap_field form.password %}
-							<button class="btn btn-warning text-dark btn block btn-rounded btn-block mt-4">Sign In</button>
-							<p class="text-center mt-3">New here ?<a href="/sign-up/?next={{ request.GET.next }} "> Sign Up</a>
+							{% bootstrap_form form %}
+							<button type="submit" class="btn btn-warning text-dark btn block btn-rounded btn-block mt-4">Sign
+								Up</button>
+							<p class="text-center mt-3">Already have an account?<a href="/sign-in/?next={{request.GET.next}}"> Sign
+									In</a></p>
 						</form>
 				</div>
 			</div>
