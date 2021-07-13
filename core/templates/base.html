@@ -53,8 +53,37 @@
 		&copy; Aman Dwivedi , 2021
 	</footer>
 
+
+	<!-- Jquery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 	<!-- MDB -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+
+	<script src="https://unpkg.com/bootoast@1.0.1/dist/bootoast.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/bootoast@1.0.1/dist/bootoast.min.css">
+
+	<script>
+		function toast(message, type) {
+			bootoast.toast({
+				message,
+				type,
+				position: 'rightTop',
+				dismissible: false
+			});
+		}
+
+		{% if messages %}
+
+		{% for message in messages %}
+		toast('{{ message }}', '{{ message.tags }}');
+		{% endfor %}
+
+		{% endif %}
+	</script>
+
+
 </body>
 
 </html>
