@@ -10,7 +10,7 @@
 				<img src="{% static 'img/avatar.png' %}" class="img-fluid mb-3 mt-3" width="100" height="100"
 					alt="profile picture">
 				<h4>{{ request.user.get_full_name }}</h4>
-				<p class="text-secondary">{{ request.user.email }}</p>
+				<p class="text-info">{{ request.user.email }}</p>
 			</div>
 			<ul class="list-group list-group-flush  mt-4" style="width: 80%;">
 				<li class="list-group-item">Create a Job</li>
