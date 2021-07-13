@@ -3,12 +3,14 @@
 
 {% block main %}
 
-<h3 class="text-info text-center">Basic Information</h3>
-<div class="card bg-white mt-3 mb-4">
+<h3 class="text-info text-center mt-4">Basic Information</h3>
+<div class="card bg-white pt-2 mb-4">
 	<div class="card-body">
-		<form method="POST">
+		<form method="POST" enctype="multipart/form-data">
 			{% csrf_token %}
 			{% bootstrap_form user_form %}
+			<p class="mt-1"></p>
+			{% bootstrap_form customer_form %}
 			<input type="hidden" name="action" value="update_profile">
 			<button type="submit" class="btn btn-warning btn-rounded mt-3">Save</button>
 		</form>
